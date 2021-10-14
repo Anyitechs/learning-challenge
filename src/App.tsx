@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import LearningPage from './pages/LearningPage';
+import ProgressPage from './pages/ProgressPage';
+import { data } from './helpers/data';
+import { useLocalStorage } from './helpers/customHooks/useLocalStorage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => {
+	const [dataObject, setDataObject] = useLocalStorage('data', data);
+	return (
+		<Router>
+			<div className="App">
+				<Switch>
+					<Route exact path="/">
+						<LearningPage learning={dataObject} />
+					</Route>
+					<Route exact path="/progress" component={ProgressPage} />
+				</Switch>
+			</div>
+		</Router>
+	);
+};
 
 export default App;
