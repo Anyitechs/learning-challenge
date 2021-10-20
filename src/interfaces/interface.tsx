@@ -12,7 +12,7 @@ export interface IProps {
 		time_limit: number;
 		options?: Array<string>;
 		answer_value: string | Array<boolean>;
-		viewed: boolean;
+		index: number;
 	}[];
 }
 

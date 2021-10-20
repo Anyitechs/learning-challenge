@@ -13,7 +13,7 @@ const App: FC = () => {
 			<div className="App">
 				<Switch>
 					<Route exact path="/">
-						<LearningPage learning={dataObject} />
+						<LearningPage learning={data} />
 					</Route>
 					<Route exact path="/progress" component={ProgressPage} />
 				</Switch>

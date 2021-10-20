@@ -10,7 +10,7 @@ export const data = [
 		time_limit: 10,
 		options: [''],
 		answer_value: '',
-		viewed: false
+		index: 0
 	},
 	{
 		content_type: 'Question',
@@ -23,6 +23,6 @@ export const data = [
 		time_limit: 5,
 		options: [''],
 		answer_value: 'JavaScript is cool!',
-		viewed: false
+		index: 1
 	}
 ];
